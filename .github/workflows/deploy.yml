@@ -16,8 +16,8 @@ jobs:
         HOST: ${{ secrets.EC2_HOST }}
         USER: ${{ secrets.EC2_USER }}
       run: |
-        echo "$PRIVATE_KEY" > hackaton.pem && chmod 600 hackaton.pem
-        ssh -o StrictHostKeyChecking=no -i hackaton.pem ${USER}@${HOST} '
+        echo "$PRIVATE_KEY" > ./hackaton.pem && chmod 600 ./hackaton.pem
+        ssh -o StrictHostKeyChecking=no -i ./hackaton.pem ${USER}@${HOST} '
         echo "Current directory: $(pwd)"
         echo "Listing home directory:"
         ls -la ~
